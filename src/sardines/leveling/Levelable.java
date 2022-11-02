@@ -9,20 +9,19 @@ import static arc.Core.*;
 public class Levelable{
     public UnlockableContent content;
     public Seq<Cons<UnlockableContent>> levelCons;
-    protected int level = 0, maxLevel;
+    protected int level = 0;
     
-    public Levelable(UnlockableContent content, Seq<Cons<UnlockableContent>> levelCons, int maxLevel){
+    public Levelable(UnlockableContent content, Seq<Cons<UnlockableContent>> levelCons){
         this.content = content;
         this.levelCons = levelCons;
         level = settings.getInt(content.name + "-sardlevel", 0);
-        this.maxLevel = maxLevel;
     }
     
     public void runCons(int level){
-        Cons<UnlockableContent> cons = levelCons.get(level - 1);
-        if(cons == null || level - 1 > maxLevel) return;
+        Cons<UnlockableContent> cons = levelCons.get(level);
+        if(cons == null || level > levelCons.size) return;
         cons.get(content);
-        this.level = level - 1;
-        settings.put(content.name + "-sardlevel", level - 1);
+        this.level = level;
+        settings.put(content.name + "-sardlevel", level);
     }
 }
