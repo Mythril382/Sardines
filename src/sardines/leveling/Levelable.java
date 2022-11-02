@@ -19,10 +19,10 @@ public class Levelable{
     }
     
     public void runCons(int level){
-        Cons<UnlockableContent> cons = levelCons.get(level);
-        if(cons == null || level == maxLevel) return;
+        Cons<UnlockableContent> cons = levelCons.get(level - 1);
+        if(cons == null || level - 1 > maxLevel) return;
         cons.get(content);
-        this.level = level;
-        settings.put(content.name + "-sardlevel", level);
+        this.level = level - 1;
+        settings.put(content.name + "-sardlevel", level - 1);
     }
 }
