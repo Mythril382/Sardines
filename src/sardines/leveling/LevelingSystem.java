@@ -10,7 +10,7 @@ import mindustry.world.*;
 import static arc.Core.*;
 
 public class LevelingSystem{
-    protected Seq<Levelable> levelables = new Seq<>();
+    protected static Seq<Levelable> levelables = new Seq<>();
     
     public static void load(){
         add(Blocks.duo, Seq.with(
