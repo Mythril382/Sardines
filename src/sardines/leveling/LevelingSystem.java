@@ -5,7 +5,7 @@ import arc.struct.*;
 import mindustry.content.*;
 import mindustry.ctype.*;
 import mindustry.type.*;
-import mindustry.world.*;
+import mindustry.world.defense.turrets.*;
 
 import static arc.Core.*;
 
@@ -15,19 +15,25 @@ public class LevelingSystem{
     public static void load(){
         add(Blocks.duo, Seq.with(
             c -> {
-                Block b = (Block)c;
+                Turret b = (Turret)c;
                 b.health = 250;
                 b.requirements = ItemStack.with(Items.copper, 35);
+                b.shoot.shots = 1;
+                b.shoot.shotDelay = 0f;
             },
             c -> {
-                Block b = (Block)c;
+                Turret b = (Turret)c;
                 b.health = 360;
-                b.requirements = ItemStack.with(Items.copper, 45);
+                b.requirements = ItemStack.with(Items.copper, 50);
+                b.shoot.shots = 2;
+                b.shoot.shotDelay = 5f;
             },
             c -> {
-                Block b = (Block)c;
-                b.health = 420;
-                b.requirements = ItemStack.with(Items.copper, 50, Items.lead, 20);
+                Turret b = (Turret)c;
+                b.health = 520;
+                b.requirements = ItemStack.with(Items.copper, 85, Items.lead, 30);
+                b.shoot.shots = 4;
+                b.shoot.shotDelay = 2.5f;
             }
         ));
         level(Blocks.duo, settings.getInt("duo-sardlevel", 0));
