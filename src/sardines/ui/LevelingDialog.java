@@ -35,13 +35,10 @@ public class LevelingDialog extends BaseDialog{
                         t.add("[lightgray]" + c.displayDescription()).wrap().fillX().padLeft(0).width(500f).padTop(10).left();
                         t.row();
                     }
-                    l.levelCons.each(cons -> {
-                        t.button(bundle.format("sardmain.level", l.levelCons.indexOf(cons) + 1), () -> {
-                            l.runCons(l.levelCons.indexOf(cons));
-                            ui.showInfo(bundle.format("sardmain.levelup", c.localizedName, l.levelCons.indexOf(cons) + 1));
-                        }).pad(10).growX();
-                        if(l.levelCons.indexOf(cons) < l.levelCons.size - 1) t.row();
-                    });
+                    t.button(l.level() < l.levelCons.size - 2 ? bundle.format("sard.level", l.level()) : "@sard.maxlevel", () -> {
+                        l.runCons(l.level() + 1);
+                        ui.showInfo(bundle.format("sard.levelup", c.localizedName, l.level()));
+                    }).pad(10).growX();
                 }).pad(10).growX();
                 if(all.indexOf(l) < all.size - 1) list.row();
             });
