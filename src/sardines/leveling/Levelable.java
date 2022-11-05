@@ -28,6 +28,11 @@ public class Levelable{
         settings.put(content.name + "-sardlevel", level);
         
         content.stats = new Stats();
-        content.setStats();
+        if(content instanceof Block block){
+            Consume[] save = block.consumers;
+            block.consumers = new Consume[0];
+            for(Consume consume : save) block.removeConsumer(consume);
+        }
+        content.init();
     }
 }
