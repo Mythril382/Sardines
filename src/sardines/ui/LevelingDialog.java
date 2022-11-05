@@ -12,7 +12,7 @@ import static mindustry.Vars.*;
 
 public class LevelingDialog extends BaseDialog{
     public LevelingDialog(){
-        super("@sardui.level");
+        super("@leveling");
         addCloseButton();
         shown(this::rebuild);
         onResize(this::rebuild);
@@ -36,9 +36,12 @@ public class LevelingDialog extends BaseDialog{
                         t.row();
                     }
                     t.button(l.level() < l.levelCons.size - 1 ? bundle.format("leveling.level", l.level()) : "@leveling.max", () -> {
-                        if(l.level() >= l.levelCons.size - 1) return;
-                        l.runCons(l.level() + 1);
-                        ui.showInfo(bundle.format("sard.levelup", c.localizedName, l.level()));
+                        if(l.level() >= l.levelCons.size - 1){
+                            ui.showInfo("@leveling.maxalready");
+                        }else{
+                            l.runCons(l.level() + 1);
+                            ui.showInfo(bundle.format("leveling.up", c.localizedName, l.level()));
+                        }
                         this.rebuild();
                     }).pad(10).growX();
                 }).pad(10).growX();
