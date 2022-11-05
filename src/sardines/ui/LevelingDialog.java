@@ -35,7 +35,7 @@ public class LevelingDialog extends BaseDialog{
                         t.add("[lightgray]" + c.displayDescription()).wrap().fillX().padLeft(0).width(500f).padTop(10).left();
                         t.row();
                     }
-                    t.button(l.level() < l.levelCons.size - 1 ? bundle.format("leveling.level", l.level()) : "@leveling.max", () -> {
+                    t.button(l.level() < l.levelCons.size - 1 ? bundle.format("leveling.currentnext", l.level() + 1, l.level() + 2) : "@leveling.max", () -> {
                         if(l.level() >= l.levelCons.size - 1){
                             ui.showInfo("@leveling.maxalready");
                         }else{
