@@ -29,11 +29,5 @@ public class Levelable{
         
         content.stats = new Stats();
         content.setStats();
-        if(content instanceof Block block){
-            Consume[] save = block.consumers;
-            block.consumers = new Consume[0];
-            for (Consume cons : save) block.remove(cons);
-            block.init();
-        }
     }
 }
