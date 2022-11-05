@@ -15,7 +15,7 @@ public class LevelingSystem{
     public static void load(){
         add(Blocks.duo, Seq.with(
             c -> {
-                Turret b = (Turret)c;
+                ItemTurret b = (ItemTurret)c;
                 b.health = 250;
                 b.requirements = ItemStack.with(Items.copper, 35);
                 b.reload = 20f;
@@ -26,7 +26,7 @@ public class LevelingSystem{
                 b.ammoTypes.get(Items.silicon).damage = 12f;
             },
             c -> {
-                Turret b = (Turret)c;
+                ItemTurret b = (ItemTurret)c;
                 b.health = 360;
                 b.requirements = ItemStack.with(Items.copper, 50);
                 b.reload = 18f;
@@ -37,7 +37,7 @@ public class LevelingSystem{
                 b.ammoTypes.get(Items.silicon).damage = 14f;
             },
             c -> {
-                Turret b = (Turret)c;
+                ItemTurret b = (ItemTurret)c;
                 b.health = 520;
                 b.requirements = ItemStack.with(Items.copper, 85, Items.lead, 30);
                 b.reload = 16f;
