@@ -29,11 +29,11 @@ public class Levelable{
         
         content.stats = new Stats();
         if(content instanceof Block block){
-            Seq<Consume> consumers = Seq.with(something.consumers);
-            Seq<Consume> optional = Seq.with(something.optionalConsumers);
+            Seq<Consume> consumers = Seq.with(block.consumers);
+            Seq<Consume> optional = Seq.with(block.optionalConsumers);
             consumers.removeAll(optional);
-            something.consumers = optional.toArray(Consume.class);
-            for(Consume consumer : consumers) something.removeConsumer(consumer);
+            block.consumers = optional.toArray(Consume.class);
+            for(Consume consumer : consumers) block.removeConsumer(consumer);
         }
         content.init();
     }
