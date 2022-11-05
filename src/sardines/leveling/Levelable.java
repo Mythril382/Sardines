@@ -20,7 +20,7 @@ public class Levelable{
     public Levelable(UnlockableContent content, Seq<Cons<UnlockableContent>> levelCons){
         this.content = content;
         this.levelCons = levelCons;
-        level = settings.getInt(content.name + "-sardlevel", 0);
+        level = settings.getInt(content.name + "-slevel", 0);
     }
     
     public void runCons(int level){
@@ -28,7 +28,7 @@ public class Levelable{
         if(cons == null || level > levelCons.size) return;
         cons.get(content);
         this.level = level;
-        settings.put(content.name + "-sardlevel", level);
+        settings.put(content.name + "-slevel", level);
         
         if(content instanceof Block block){
             Seq<Consume> consumers = new Seq<>(block.consumers);
