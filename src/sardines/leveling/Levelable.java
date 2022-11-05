@@ -34,6 +34,7 @@ public class Levelable{
             consumers.removeAll(optional);
             block.consumers = optional.toArray(Consume.class);
             for(Consume consumer : consumers) block.removeConsumer(consumer);
+            for(Consume consumer : optional) block.consume(consumer);
         }
         content.init();
     }
