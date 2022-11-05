@@ -36,7 +36,7 @@ public class LevelingSystem{
                 b.shoot.shotDelay = 2.5f;
             }
         ));
-        level(Blocks.duo, settings.getInt("duo-sardlevel", 0));
+        level(Blocks.duo, settings.getInt("duo-slevel", 0));
     }
     
     public static Seq<Levelable> all(){
