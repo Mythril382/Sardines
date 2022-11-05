@@ -38,8 +38,10 @@ public class Levelable{
             block.consPower = null;
             for(Consume consume : consumers) block.removeConsumer(consume);
             
-            ObjectMap<String, Func<Building, Bar>> bars = (ObjectMap<String, Func<Building, Bar>>)Reflect.get(block, "barMap");
-            bars.clear();
+            try{
+                ObjectMap<String, Func<Building, Bar>> bars = (ObjectMap<String, Func<Building, Bar>>)Reflect.get(block, "barMap");
+                bars.clear();
+            }catch(Throwable ignored){}
         }
         content.stats = new Stats();
         content.init();
