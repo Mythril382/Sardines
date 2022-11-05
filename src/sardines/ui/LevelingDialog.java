@@ -34,7 +34,7 @@ public class LevelingDialog extends BaseDialog{
                         t.row();
                     }
                     l.levelCons.each(cons -> {
-                        t.button("@sardui.level" + " 1", () -> l.runCons(l.levelCons.indexOf(cons)));
+                        t.button(bundle.format("@sardmain.level", l.levelCons.indexOf(cons) + 1), () -> l.runCons(l.levelCons.indexOf(cons)));
                         if(l.levelCons.indexOf(cons) < l.levelCons.size - 1) t.row();
                     });
                 }).growX();
