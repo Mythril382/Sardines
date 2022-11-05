@@ -11,7 +11,7 @@ import static mindustry.Vars.*;
 public class Sardines extends Mod{
     public Sardines(){
         Events.on(ClientLoadEvent.class, e -> {
-            ui.menufrag.addButton("@sardui.level", Icon.effect, SardVars.ui.level::show);
+            ui.menufrag.addButton("@leveling", Icon.effect, SardVars.ui.level::show);
         });
     }
     
