@@ -27,15 +27,15 @@ public class Levelable{
         this.level = level;
         settings.put(content.name + "-sardlevel", level);
         
-        content.stats = new Stats();
         if(content instanceof Block block){
-            Seq<Consume> consumers = Seq.with(block.consumers);
-            Seq<Consume> optional = Seq.with(block.optionalConsumers);
-            consumers.removeAll(optional);
-            block.consumers = optional.toArray(Consume.class);
-            for(Consume consumer : consumers) block.removeConsumer(consumer);
-            for(Consume consumer : optional) block.consume(consumer);
+            Seq<Consume> save = new Seq<>(block.consumers);
+            block.consumers = new Consume[0];
+            block.nonOptionalConsumers = new Consume[0];
+            block.optionalConsumers = new Consume[0];
+            block.consPower = null;
+            for(Consume consume : save) block.removeConsumer(consume);
         }
+        content.stats = new Stats();
         content.init();
     }
 }
