@@ -2,6 +2,7 @@ package sardines.leveling;
 
 import arc.func.*;
 import arc.struct.*;
+import arc.util.*;
 import mindustry.ctype.*;
 import mindustry.world.*;
 import mindustry.world.consumers.*;
@@ -28,12 +29,15 @@ public class Levelable{
         settings.put(content.name + "-sardlevel", level);
         
         if(content instanceof Block block){
-            Seq<Consume> save = new Seq<>(block.consumers);
+            Seq<Consume> consumers = new Seq<>(block.consumers);
             block.consumers = new Consume[0];
             block.nonOptionalConsumers = new Consume[0];
             block.optionalConsumers = new Consume[0];
             block.consPower = null;
-            for(Consume consume : save) block.removeConsumer(consume);
+            for(Consume consume : consumers) block.removeConsumer(consume);
+            
+            ObjectMap<String, Func<Building, Bar>> bars = (ObjectMap<String, Func<Building, Bar>>)Reflect.get(block, "barMap");
+            bars.clear();
         }
         content.stats = new Stats();
         content.init();
