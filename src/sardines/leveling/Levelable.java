@@ -36,6 +36,7 @@ public class Levelable{
             consumers.removeAll(optionals);
             block.consumers = new Consume[0];
             block.nonOptionalConsumers = new Consume[0];
+            block.optionalConsumers = new Consume[0];
             block.consPower = null;
             for(Consume consume : consumers) block.removeConsumer(consume);
             
