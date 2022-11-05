@@ -48,4 +48,8 @@ public class Levelable{
         content.stats = new Stats();
         content.init();
     }
+    
+    public int level(){
+        return level;
+    }
 }
