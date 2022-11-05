@@ -5,7 +5,7 @@ import arc.struct.*;
 import mindustry.content.*;
 import mindustry.ctype.*;
 import mindustry.type.*;
-import mindustry.world.defense.*;
+import mindustry.world.blocks.defense.turrets.*;
 
 import static arc.Core.*;
 
