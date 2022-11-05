@@ -33,7 +33,7 @@ public class Levelable{
             Seq<Consume> optional = Seq.with(something.optionalConsumers);
             consumers.removeAll(optional);
             something.consumers = optional.toArray(Consume.class);
-            for(Consume consumer : consumers) something.remove(consumer);
+            for(Consume consumer : consumers) something.removeConsumer(consumer);
         }
         content.init();
     }
