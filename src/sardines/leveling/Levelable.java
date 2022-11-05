@@ -32,6 +32,8 @@ public class Levelable{
         
         if(content instanceof Block block){
             Seq<Consume> consumers = new Seq<>(block.consumers);
+            Seq<Consume> optionals = new Seq<>(block.optionalConsumers);
+            consumers.removeAll(optionals);
             block.consumers = new Consume[0];
             block.nonOptionalConsumers = new Consume[0];
             block.optionalConsumers = new Consume[0];
