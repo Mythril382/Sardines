@@ -7,11 +7,12 @@ import mindustry.gen.*;
 import mindustry.ui.dialogs.*;
 import sardines.leveling.*;
 
+import static arc.Core.*;
 import static mindustry.Vars.*;
 
 public class LevelingDialog extends BaseDialog{
     public LevelingDialog(){
-        super("@sardui.leveling");
+        super("@sardui.level");
         addCloseButton();
         shown(this::rebuild);
         onResize(this::rebuild);
