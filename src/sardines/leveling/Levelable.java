@@ -4,6 +4,8 @@ import arc.func.*;
 import arc.struct.*;
 import arc.util.*;
 import mindustry.ctype.*;
+import mindustry.gen.*;
+import mindustry.ui.*;
 import mindustry.world.*;
 import mindustry.world.consumers.*;
 import mindustry.world.meta.*;
