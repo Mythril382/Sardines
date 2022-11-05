@@ -25,6 +25,7 @@ public class LevelingDialog extends BaseDialog{
             all.each(l -> {
                 UnlockableContent c = l.content;
                 list.table(t -> {
+                    t.setBackground(Tex.button);
                     t.table(title1 -> {
                         title1.image(c.uiIcon).size(iconXLarge).scaling(Scaling.fit);
                         title1.add("[accent]" + c.localizedName).padLeft(5);
@@ -35,7 +36,7 @@ public class LevelingDialog extends BaseDialog{
                         t.row();
                     }
                     l.levelCons.each(cons -> {
-                        t.button(bundle.format("@sardmain.level", l.levelCons.indexOf(cons) + 1), () -> l.runCons(l.levelCons.indexOf(cons)));
+                        t.button(bundle.format("sardmain.level", l.levelCons.indexOf(cons) + 1), () -> l.runCons(l.levelCons.indexOf(cons))).growX();
                         if(l.levelCons.indexOf(cons) < l.levelCons.size - 1) t.row();
                     });
                 }).growX();
