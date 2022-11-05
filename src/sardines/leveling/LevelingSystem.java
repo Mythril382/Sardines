@@ -14,15 +14,19 @@ public class LevelingSystem{
     
     public static void load(){
         add(Blocks.duo, Seq.with(
-            c -> {}, // level 1, nothing
             c -> {
                 Block b = (Block)c;
-                b.health = 400;
+                b.health = 250;
+                b.requirements = ItemStack.with(Items.copper, 35);
+            },
+            c -> {
+                Block b = (Block)c;
+                b.health = 360;
                 b.requirements = ItemStack.with(Items.copper, 45);
             },
             c -> {
                 Block b = (Block)c;
-                b.health = 480;
+                b.health = 420;
                 b.requirements = ItemStack.with(Items.copper, 50, Items.lead, 20);
             }
         ));
