@@ -40,7 +40,7 @@ public class LevelingDialog extends BaseDialog{
                             ui.showInfo("@leveling.maxalready");
                         }else{
                             l.runCons(l.level() + 1);
-                            ui.showInfo(bundle.format("leveling.up", c.localizedName, l.level()));
+                            ui.showInfo(bundle.format("leveling.up", c.localizedName, l.level() + 1));
                         }
                         this.rebuild();
                     }).pad(10).growX();
