@@ -30,6 +30,12 @@ public class LevelingDialog extends BaseDialog{
             count.image(Items.carbide.uiIcon).size(iconXLarge).scaling(Scaling.fit).pad(5);
             count.label(() -> Integer.toString(settings.getInt("mini-carbs", 0))).style(Styles.outlineLabel).pad(5);
         }).padBottom(20).row();
+        cont.table(count -> {
+            count.setBackground(Tex.whiteui);
+            count.setColor(Pal.darkishGray);
+            count.image(Blocks.carbideCrucible.uiIcon).size(iconXLarge).scaling(Scaling.fit).pad(5);
+            count.label(() -> Integer.toString(settings.getInt("mini-carb-prods", 5))).style(Styles.outlineLabel).pad(5);
+        }).padBottom(20).row();
         cont.pane(list -> {
             all.each(l -> {
                 UnlockableContent c = l.content;
