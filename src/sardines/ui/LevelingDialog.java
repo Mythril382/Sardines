@@ -6,6 +6,7 @@ import mindustry.content.*;
 import mindustry.ctype.*;
 import mindustry.gen.*;
 import mindustry.graphics.*;
+import mindustry.ui.*;
 import mindustry.ui.dialogs.*;
 import sardines.leveling.*;
 
@@ -27,7 +28,7 @@ public class LevelingDialog extends BaseDialog{
             count.setBackground(Tex.whiteui);
             count.setColor(Pal.darkishGray);
             count.image(Items.carbide.uiIcon).size(iconXLarge).scaling(Scaling.fit).pad(5);
-            count.label(() -> Integer.toString(settings.getInt("mini-carbs", 0))).pad(5);
+            count.label(() -> Integer.toString(settings.getInt("mini-carbs", 0))).style(Styles.outlineLabel).pad(5);
         }).padBottom(20).row();
         cont.pane(list -> {
             all.each(l -> {
