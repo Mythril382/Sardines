@@ -1,0 +1,41 @@
+package sardines.ui;
+
+import arc.util.*;
+import mindustry.content.*;
+import mindustry.gen.*;
+import mindustry.graphics.*;
+import mindustry.ui.*;
+import mindustry.ui.dialogs.*;
+
+import static arc.Core.*;
+
+public class ProductionDialog extends BaseDialog{
+    public ProductionDialog(){
+        super("@mini-carb.prod");
+        addCloseButton();
+        shown(this::rebuild);
+        onResize(this::rebuild);
+    }
+    
+    void rebuild(){
+        cont.clear();
+        cont.add("@mini-carb.prodhint").wrap().pad(10).row();
+        cont.table(t -> {
+            t.setBackground(Tex.whiteui);
+            t.setColor(Pal.darkishGray);
+            t.image(Blocks.carbideCrucible.uiIcon).size(iconXLarge).scaling(Scaling.fit).pad(5);
+            t.label(() -> Integer.toString(settings.getInt("mini-carb-prods", 5))).style(Styles.outlineLabel).pad(5);
+        }).pad(20).row();
+        cont.button("@mini-carb.prodbuy", () -> {
+            int mc = settings.getInt("mini-carbs", 5);
+            if(mc < 5){
+                ui.showInfo("@mini-carb.cantbuy");
+            }else{
+                settings.put("mini-carbs", mc - 5);
+                settings.put("mini-carb-prods", settings.getInt("mini-carb-prods", 5) + 1);
+                ui.showInfo("@mini-carb.prodbought");
+                this.rebuild();
+            }
+        }).growX();
+    }
+}
