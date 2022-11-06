@@ -20,7 +20,7 @@ public class ProductionDialog extends BaseDialog{
     
     void rebuild(){
         cont.clear();
-        cont.add("@mini-carb.prodhint").wrap().pad(10).row();
+        cont.add("@mini-carb.prodhint").wrap().pad(10).center().row();
         cont.table(t -> {
             t.setBackground(Tex.whiteui);
             t.setColor(Pal.darkishGray);
