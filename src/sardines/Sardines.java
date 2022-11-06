@@ -19,7 +19,7 @@ public class Sardines extends Mod{
             Events.run(Trigger.update, () -> {
                 counter += Time.delta;
                 if(counter >= (60 * 60)){
-                    settings.put("mini-carbs", settings.getInt("mini-carb-prods", 5) * 1);
+                    settings.put("mini-carbs", settings.getInt("mini-carbs") + settings.getInt("mini-carb-prods", 5) * 1);
                     counter = 0f;
                 }
             });
