@@ -8,6 +8,7 @@ import mindustry.ui.*;
 import mindustry.ui.dialogs.*;
 
 import static arc.Core.*;
+import static mindustry.Vars.*;
 
 public class ProductionDialog extends BaseDialog{
     public ProductionDialog(){
