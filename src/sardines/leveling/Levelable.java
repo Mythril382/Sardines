@@ -15,11 +15,13 @@ import static arc.Core.*;
 public class Levelable{
     public UnlockableContent content;
     public Seq<Cons<UnlockableContent>> levelCons;
+    public Seq<Integer> prices;
     protected int level = 0;
     
-    public Levelable(UnlockableContent content, Seq<Cons<UnlockableContent>> levelCons){
+    public Levelable(UnlockableContent content, Seq<Cons<UnlockableContent>> levelCons, Seq<Integer> prices){
         this.content = content;
         this.levelCons = levelCons;
+        this.prices = prices;
         level = settings.getInt(content.name + "-slevel", 0);
     }
     
@@ -51,5 +53,9 @@ public class Levelable{
     
     public int level(){
         return level;
+    }
+    
+    public int price(int level){
+        return prices.get(level);
     }
 }
