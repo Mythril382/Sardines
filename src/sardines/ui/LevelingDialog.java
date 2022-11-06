@@ -2,8 +2,10 @@ package sardines.ui;
 
 import arc.struct.*;
 import arc.util.*;
+import mindustry.content.*;
 import mindustry.ctype.*;
 import mindustry.gen.*;
+import mindustry.graphics.*;
 import mindustry.ui.dialogs.*;
 import sardines.leveling.*;
 
@@ -21,6 +23,12 @@ public class LevelingDialog extends BaseDialog{
     void rebuild(){
         cont.clear();
         Seq<Levelable> all = LevelingSystem.all();
+        cont.table(count -> {
+            count.setBackground(Tex.whiteui);
+            count.setColor(Pal.darkishGray);
+            count.image(Items.carbide.uiIcon).size(iconXLarge).scaling(Scaling.fit);
+            count.label(() -> Integer.toString(settings.getInt("mini-carbs", 0))).padLeft(5);
+        }).padBottom(10).row();
         cont.pane(list -> {
             all.each(l -> {
                 UnlockableContent c = l.content;
