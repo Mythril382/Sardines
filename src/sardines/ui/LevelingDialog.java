@@ -17,6 +17,8 @@ public class LevelingDialog extends BaseDialog{
     public LevelingDialog(){
         super("@leveling");
         addCloseButton();
+        buttons.button("@mini-carb.extra", () -> {});
+        buttons.button("@mini-carb.prods", () -> {});
         shown(this::rebuild);
         onResize(this::rebuild);
     }
