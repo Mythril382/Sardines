@@ -53,10 +53,13 @@ public class LevelingDialog extends BaseDialog{
                         t.add("[lightgray]" + c.displayDescription()).wrap().fillX().padLeft(0).width(500f).padTop(10).left();
                         t.row();
                     }
-                    t.button(l.level() < l.levelCons.size - 1 ? bundle.format("leveling.currentnext", l.level() + 1, l.level() + 2) : "@leveling.max", () -> {
+                    t.button(l.level() < l.levelCons.size - 1 ? bundle.format("leveling.currentnext", l.level() + 1, l.level() + 2, l.price(l.level() + 1)) : "@leveling.max", () -> {
                         if(l.level() >= l.levelCons.size - 1){
                             ui.showInfo("@leveling.maxalready");
+                        }else if(settings.getInt("mini-carbs", 0) < l.price(l.level() + 1)){
+                            ui.showInfo("@mini-carb.cantbuy");
                         }else{
+                            settings.put("mini-carbs", settings.getInt("mini-carbs", 0) - l.price(l.level() + 1));
                             l.runCons(l.level() + 1);
                             ui.showInfo(bundle.format("leveling.up", c.localizedName, l.level() + 1));
                         }
