@@ -17,8 +17,8 @@ public class LevelingDialog extends BaseDialog{
     public LevelingDialog(){
         super("@leveling");
         addCloseButton();
-        buttons.button("@mini-carb.extra", () -> {});
-        buttons.button("@mini-carb.prods", () -> {});
+        buttons.button("@mini-carb.extra", Icon.upload, () -> {});
+        buttons.button("@mini-carb.prods", Icon.hammer, () -> {});
         shown(this::rebuild);
         onResize(this::rebuild);
     }
@@ -31,7 +31,7 @@ public class LevelingDialog extends BaseDialog{
             t.setColor(Pal.darkishGray);
             t.image(Items.carbide.uiIcon).size(iconXLarge).scaling(Scaling.fit).pad(5);
             t.label(() -> Integer.toString(settings.getInt("mini-carbs", 0))).style(Styles.outlineLabel).pad(5);
-        }).pad(20);
+        }).pad(20).row();
         cont.table(t -> {
             t.setBackground(Tex.whiteui);
             t.setColor(Pal.darkishGray);
