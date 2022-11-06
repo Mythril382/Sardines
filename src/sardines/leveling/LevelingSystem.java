@@ -48,7 +48,7 @@ public class LevelingSystem{
                 b.ammoTypes.get(Items.graphite).damage = 23f;
                 b.ammoTypes.get(Items.silicon).damage = 15f;
             }
-        ));
+        ), Seq.with(0, 100, 300));
         level(Blocks.duo, settings.getInt("duo-slevel", 0));
         
         add(Blocks.copperWall, Seq.with(
@@ -67,7 +67,7 @@ public class LevelingSystem{
                 b.health = 560;
                 b.requirements = ItemStack.with(Items.copper, 18);
             }
-        ));
+        ), Seq.with(0, 120, 250));
         level(Blocks.copperWall, settings.getInt("copper-wall-slevel", 0));
         
         add(Blocks.copperWallLarge, Seq.with(
@@ -86,7 +86,7 @@ public class LevelingSystem{
                 b.health = 1420;
                 b.requirements = ItemStack.with(Items.copper, 40);
             }
-        ));
+        ), Seq.with(0, 250, 400));
         level(Blocks.copperWallLarge, settings.getInt("copper-wall-large-slevel", 0));
     }
     
@@ -94,8 +94,8 @@ public class LevelingSystem{
         return levelables;
     }
     
-    protected static void add(UnlockableContent content, Seq<Cons<UnlockableContent>> levelCons){
-        levelables.add(new Levelable(content, levelCons));
+    protected static void add(UnlockableContent content, Seq<Cons<UnlockableContent>> levelCons, Seq<Integer> prices){
+        levelables.add(new Levelable(content, levelCons, prices));
     }
     
     protected static void level(UnlockableContent content, int level){
