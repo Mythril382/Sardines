@@ -8,6 +8,7 @@ import mindustry.gen.*;
 import mindustry.graphics.*;
 import mindustry.ui.*;
 import mindustry.ui.dialogs.*;
+import sardines.*;
 import sardines.leveling.*;
 
 import static arc.Core.*;
@@ -18,7 +19,7 @@ public class LevelingDialog extends BaseDialog{
         super("@leveling");
         addCloseButton();
         buttons.button("@mini-carb.extra", Icon.upload, () -> ui.showInfo("[lightgray]..."));
-        buttons.button("@mini-carb.prods", Icon.hammer, () -> {});
+        buttons.button("@mini-carb.prods", Icon.hammer, SardVars.ui.prod::show);
         shown(this::rebuild);
         onResize(this::rebuild);
     }
