@@ -5,6 +5,7 @@ import arc.struct.*;
 import mindustry.content.*;
 import mindustry.ctype.*;
 import mindustry.type.*;
+import mindustry.world.blocks.defense.*;
 import mindustry.world.blocks.defense.turrets.*;
 
 import static arc.Core.*;
@@ -49,6 +50,44 @@ public class LevelingSystem{
             }
         ));
         level(Blocks.duo, settings.getInt("duo-slevel", 0));
+        
+        add(Blocks.copperWall, Seq.with(
+            c -> {
+                Wall b = (Wall)c;
+                b.health = 320;
+                b.requirements = ItemStack.with(Items.copper, 6);
+            },
+            c -> {
+                Wall b = (Wall)c;
+                b.health = 440;
+                b.requirements = ItemStack.with(Items.copper, 12);
+            },
+            c -> {
+                Wall b = (Wall)c;
+                b.health = 560;
+                b.requirements = ItemStack.with(Items.copper, 18);
+            }
+        ));
+        level(Blocks.copperWall, settings.getInt("copper-wall-slevel", 0));
+        
+        add(Blocks.copperWallLarge, Seq.with(
+            c -> {
+                Wall b = (Wall)c;
+                b.health = 1280;
+                b.requirements = ItemStack.with(Items.copper, 24);
+            },
+            c -> {
+                Wall b = (Wall)c;
+                b.health = 1300;
+                b.requirements = ItemStack.with(Items.copper, 32);
+            },
+            c -> {
+                Wall b = (Wall)c;
+                b.health = 1420;
+                b.requirements = ItemStack.with(Items.copper, 40);
+            }
+        ));
+        level(Blocks.copperWallLarge, settings.getInt("copper-wall-large-slevel", 0));
     }
     
     public static Seq<Levelable> all(){
