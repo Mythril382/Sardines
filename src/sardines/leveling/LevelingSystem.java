@@ -28,7 +28,7 @@ public class LevelingSystem{
             c -> {
                 ItemTurret b = (ItemTurret)c;
                 b.health = 360;
-                b.requirements = ItemStack.with(Items.copper, 50);
+                b.requirements = ItemStack.with(Items.copper, 50, Items.lead, 30);
                 b.reload = 18f;
                 b.shoot.shots = 3;
                 b.shoot.shotDelay = 5f;
@@ -39,7 +39,7 @@ public class LevelingSystem{
             c -> {
                 ItemTurret b = (ItemTurret)c;
                 b.health = 520;
-                b.requirements = ItemStack.with(Items.copper, 85, Items.lead, 30);
+                b.requirements = ItemStack.with(Items.copper, 85, Items.graphite, 35);
                 b.reload = 16f;
                 b.shoot.shots = 5;
                 b.shoot.shotDelay = 2.5f;
