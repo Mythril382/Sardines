@@ -24,26 +24,26 @@ public class LevelingDialog extends BaseDialog{
     void rebuild(){
         cont.clear();
         Seq<Levelable> all = LevelingSystem.all();
-        cont.table(count -> {
-            count.setBackground(Tex.whiteui);
-            count.setColor(Pal.darkishGray);
-            count.image(Items.carbide.uiIcon).size(iconXLarge).scaling(Scaling.fit).pad(5);
-            count.label(() -> Integer.toString(settings.getInt("mini-carbs", 0))).style(Styles.outlineLabel).pad(5);
+        cont.table(t -> {
+            t.setBackground(Tex.whiteui);
+            t.setColor(Pal.darkishGray);
+            t.image(Items.carbide.uiIcon).size(iconXLarge).scaling(Scaling.fit).pad(5);
+            t.label(() -> Integer.toString(settings.getInt("mini-carbs", 0))).style(Styles.outlineLabel).pad(5);
         }).pad(20);
-        cont.table(count -> {
-            count.setBackground(Tex.whiteui);
-            count.setColor(Pal.darkishGray);
-            count.image(Blocks.carbideCrucible.uiIcon).size(iconXLarge).scaling(Scaling.fit).pad(5);
-            count.label(() -> Integer.toString(settings.getInt("mini-carb-prods", 5))).style(Styles.outlineLabel).pad(5);
+        cont.table(t -> {
+            t.setBackground(Tex.whiteui);
+            t.setColor(Pal.darkishGray);
+            t.image(Blocks.carbideCrucible.uiIcon).size(iconXLarge).scaling(Scaling.fit).pad(5);
+            t.label(() -> Integer.toString(settings.getInt("mini-carb-prods", 5))).style(Styles.outlineLabel).pad(5);
         }).pad(20).row();
         cont.pane(list -> {
             all.each(l -> {
                 UnlockableContent c = l.content;
                 list.table(t -> {
                     t.setBackground(Tex.button);
-                    t.table(title1 -> {
-                        title1.image(c.uiIcon).size(iconXLarge).scaling(Scaling.fit);
-                        title1.add("[accent]" + c.localizedName).padLeft(5);
+                    t.table(t1 -> {
+                        t1.image(c.uiIcon).size(iconXLarge).scaling(Scaling.fit);
+                        t1.add("[accent]" + c.localizedName).padLeft(5);
                     });
                     t.row();
                     if(c.description != null){
