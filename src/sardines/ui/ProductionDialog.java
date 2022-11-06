@@ -12,7 +12,7 @@ import static mindustry.Vars.*;
 
 public class ProductionDialog extends BaseDialog{
     public ProductionDialog(){
-        super("@mini-carb.prod");
+        super("@mini-carb.prods");
         addCloseButton();
         shown(this::rebuild);
         onResize(this::rebuild);
