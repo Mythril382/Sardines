@@ -19,7 +19,7 @@ public class LevelingDialog extends BaseDialog{
         super("@leveling");
         addCloseButton();
         buttons.button("@mini-carb.extra", Icon.upload, () -> ui.showInfo("[lightgray]..."));
-        buttons.button("@mini-carb.prods", Icon.hammer, SardVars.ui.prod::show);
+        buttons.button("@mini-carb.prods", Icon.hammer, () -> { if(SardVars.ui.prod != null) SardVars.ui.prod.show(); });
         shown(this::rebuild);
         onResize(this::rebuild);
     }
