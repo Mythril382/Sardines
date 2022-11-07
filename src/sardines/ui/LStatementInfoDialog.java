@@ -15,9 +15,9 @@ import static mindustry.Vars.*;
 
 public class LStatementInfoDialog extends BaseDialog{
     protected final ObjectMap<String, Func<LStatement, String>> lStats = ObjectMap.of(
-        "privileged", lst -> bundle.get(lst.privileged() ? "yes" : "no"),
-        "nonprivileged", lst -> bundle.get(lst.nonPrivileged() ? "yes" : "no"),
-        "category", lst -> lst.category().localized()
+        "privileged", lst -> { return bundle.get(lst.privileged() ? "yes" : "no"); },
+        "nonprivileged", lst -> { return bundle.get(lst.nonPrivileged() ? "yes" : "no"); },
+        "category", lst -> { return lst.category().localized(); }
     );
     
     public LStatementInfoDialog(){
