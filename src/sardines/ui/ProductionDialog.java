@@ -28,7 +28,7 @@ public class ProductionDialog extends BaseDialog{
             t.label(() -> Integer.toString(settings.getInt("mini-carb-prods", 5))).style(Styles.outlineLabel).pad(5);
         }).pad(20).get();
         counter.clicked(() -> ui.showInfo("mini-carb.prodhint"));
-        cont.row()
+        cont.row();
         cont.button("@mini-carb.prodbuy", () -> {
             int mc = settings.getInt("mini-carbs", 5);
             if(mc < 5){
