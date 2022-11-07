@@ -3,6 +3,7 @@ package sardines;
 import arc.*;
 import arc.graphics.*;
 import arc.math.*;
+import arc.scene.*;
 import arc.scene.ui.*;
 import arc.scene.ui.layout.*;
 import arc.struct.*;
