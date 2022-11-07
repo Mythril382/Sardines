@@ -27,7 +27,7 @@ public class ProductionDialog extends BaseDialog{
             t.image(Blocks.carbideCrucible.uiIcon).size(iconXLarge).scaling(Scaling.fit).pad(5);
             t.label(() -> Integer.toString(settings.getInt("mini-carb-prods", 5))).style(Styles.outlineLabel).pad(5);
         }).pad(20).get();
-        counter.clicked(() -> ui.showInfo("mini-carb.prodhint"));
+        counter.clicked(() -> ui.showInfo("@mini-carb.prodhint"));
         cont.row();
         cont.button("@mini-carb.prodbuy", () -> {
             int mc = settings.getInt("mini-carbs", 5);
