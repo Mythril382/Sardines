@@ -26,9 +26,9 @@ public class ProductionDialog extends BaseDialog{
             t.setColor(Pal.darkishGray);
             t.image(Blocks.carbideCrucible.uiIcon).size(iconXLarge).scaling(Scaling.fit).pad(5);
             t.label(() -> Integer.toString(settings.getInt("mini-carb-prods", 5))).style(Styles.outlineLabel).pad(5);
-        }).pad(20).get();
+        }).pad(20).padRight(10).get();
         counter.clicked(() -> ui.showInfo("@mini-carb.prodhint"));
-        cont.add("@mini-carb.prodclick").pad(20).row();
+        cont.add("@mini-carb.prodclick").pad(20).padLeft(10).row();
         cont.button("@mini-carb.prodbuy", () -> {
             int mc = settings.getInt("mini-carbs", 5);
             if(mc < 5){
