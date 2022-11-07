@@ -26,6 +26,8 @@ public class LevelingDialog extends BaseDialog{
     
     void rebuild(){
         cont.clear();
+        boolean hintDone = settings.getBool("leveling-hint", false);
+        if(!hintDone) ui.showInfo("@leveling.hint");
         Seq<Levelable> all = LevelingSystem.all();
         cont.table(t -> {
             t.setBackground(Tex.whiteui);
