@@ -1,0 +1,11 @@
+themes: [
+    {
+        name: default,
+        blocks: d4816b,
+        control: 6bb2b2,
+        operations: 877bad,
+        io: a08a8a,
+        units: c7b59d,
+        world: 6b84d4
+    }
+]
