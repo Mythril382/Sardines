@@ -18,28 +18,35 @@ public class LStatementInfoDialog extends BaseDialog{
     
     public LStatementInfoDialog(){
         super("@info.title");
+        
         lStats.put("privileged", lst -> bundle.get(lst.privileged() ? "yes" : "no"));
         lStats.put("nonprivileged", lst -> bundle.get(lst.nonPrivileged() ? "yes" : "no"));
         lStats.put("category", lst -> lst.category().localized());
+        
         addCloseButton();
     }
     
     public void show(LStatement statement){
         String smallName = statement.name().toLowerCase().replace(" ", "");
+        
         cont.clear();
+        
         Table table = new Table();
         table.margin(10);
+        
         table.table(title1 -> {
             title1.image(Icon.logic).size(iconXLarge).scaling(Scaling.fit);
             title1.add("[accent]" + statement.name() + (settings.getBool("console") ? "\n[gray]" + smallName : "")).padLeft(10);
         });
         table.row();
+        
         if(bundle.has(smallName)){
             table.add("@category.purpose").color(Pal.accent).fillX().padTop(10);
             table.row();
             table.add("[lightgray]" + bundle.get(smallName)).wrap().fillX().padLeft(10).width(500f).left();
             table.row();
         }
+        
         lStats.each((k, v) -> {
             table.table(inset -> {
                 inset.left();
@@ -47,8 +54,10 @@ public class LStatementInfoDialog extends BaseDialog{
             });
             table.row();
         });
+        
         ScrollPane pane = new ScrollPane(table);
         cont.add(pane);
+        
         show();
     }
 }
