@@ -14,14 +14,13 @@ import static arc.Core.*;
 import static mindustry.Vars.*;
 
 public class LStatementInfoDialog extends BaseDialog{
-    protected final ObjectMap<String, Func<LStatement, String>> lStats = ObjectMap.of(
-        "privileged", lst -> { return bundle.get(lst.privileged() ? "yes" : "no"); },
-        "nonprivileged", lst -> { return bundle.get(lst.nonPrivileged() ? "yes" : "no"); },
-        "category", lst -> { return lst.category().localized(); }
-    );
+    protected final ObjectMap<String, Func<LStatement, String>> lStats = new ObjectMap<>();
     
     public LStatementInfoDialog(){
         super("@info.title");
+        lStats.put("privileged", lst -> bundle.get(lst.privileged() ? "yes" : "no"));
+        lStats.put("nonprivileged", lst -> bundle.get(lst.nonPrivileged() ? "yes" : "no"));
+        lStats.put("category", lst -> lst.category().localized());
         addCloseButton();
     }
     
