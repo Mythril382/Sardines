@@ -25,7 +25,7 @@ public class LStatementInfoDialog extends BaseDialog{
     }
     
     public void show(LStatement statement){
-        String smallName = statement.name.toLowerCase().replace(" ", "")
+        String smallName = statement.name.toLowerCase().replace(" ", "");
         cont.clear();
         Table table = new Table();
         table.margin(10);
