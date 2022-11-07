@@ -63,7 +63,7 @@ public class Sardines extends Mod{
             
             for(int i = 0; i < statements.size; i++){
                 LStatement lst = statements.get(i);
-                Image image = list.add(Icon.logic).color(lst.category().color).size(8 * 4).pad(3).get();
+                Element image = list.add(Icon.logic).color(lst.category().color).size(8 * 4).pad(3).get();
                 
                 image.clicked(() -> SardVars.ui.lstInfo.show(lst));
                 
