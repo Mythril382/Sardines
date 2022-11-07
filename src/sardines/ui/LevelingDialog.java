@@ -20,15 +20,17 @@ public class LevelingDialog extends BaseDialog{
         addCloseButton();
         buttons.button("@mini-carb.extra", Icon.upload, () -> ui.showInfo("[lightgray]..."));
         buttons.button("@mini-carb.prods", Icon.hammer, () -> { if(SardVars.ui.prod != null) SardVars.ui.prod.show(); });
-        shown(this::rebuild);
+        shown(() -> {
+            this.rebuild();
+            boolean hintDone = settings.getBool("leveling-hint", false);
+            if(!hintDone) ui.showInfo("@leveling.hint");
+            settings.put("leveling-hint", true);
+        });
         onResize(this::rebuild);
     }
     
     void rebuild(){
         cont.clear();
-        boolean hintDone = settings.getBool("leveling-hint", false);
-        if(!hintDone) ui.showInfo("@leveling.hint");
-        settings.put("leveling-hint", true);
         Seq<Levelable> all = LevelingSystem.all();
         cont.table(t -> {
             t.setBackground(Tex.whiteui);
