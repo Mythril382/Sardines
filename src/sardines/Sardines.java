@@ -3,7 +3,6 @@ package sardines;
 import arc.*;
 import arc.graphics.*;
 import arc.math.*;
-import arc.scene.*;
 import arc.scene.ui.*;
 import arc.scene.ui.layout.*;
 import arc.struct.*;
@@ -64,7 +63,7 @@ public class Sardines extends Mod{
             
             for(int i = 0; i < statements.size; i++){
                 LStatement lst = statements.get(i);
-                Element image = list.add(Icon.logic).color(lst.category().color).size(8 * 4).pad(3).get();
+                Image image = list.image(Icon.logic).color(lst.category().color).size(8 * 4).pad(3).get();
                 
                 image.clicked(() -> SardVars.ui.lstInfo.show(lst));
                 
