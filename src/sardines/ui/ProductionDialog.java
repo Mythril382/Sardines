@@ -14,13 +14,16 @@ import static mindustry.Vars.*;
 public class ProductionDialog extends BaseDialog{
     public ProductionDialog(){
         super("@mini-carb.prods");
+        
         addCloseButton();
+        
         shown(this::rebuild);
         onResize(this::rebuild);
     }
     
     void rebuild(){
         cont.clear();
+        
         Table counter = cont.table(t -> {
             t.setBackground(Tex.whiteui);
             t.setColor(Pal.darkishGray);
@@ -29,7 +32,9 @@ public class ProductionDialog extends BaseDialog{
         }).pad(20).get();
         counter.clicked(() -> ui.showInfo("@mini-carb.prodhint"));
         cont.row();
+        
         cont.add("@mini-carb.prodclick").pad(20).row();
+        
         cont.button("@mini-carb.prodbuy", () -> {
             int mc = settings.getInt("mini-carbs", 5);
             if(mc < 5){
