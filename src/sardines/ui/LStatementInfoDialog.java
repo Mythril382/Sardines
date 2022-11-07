@@ -1,6 +1,7 @@
 package sardines.ui;
 
 import arc.func.*;
+import arc.scene.ui.*;
 import arc.scene.ui.layout.*;
 import arc.struct.*;
 import arc.util.*;
@@ -25,7 +26,7 @@ public class LStatementInfoDialog extends BaseDialog{
     }
     
     public void show(LStatement statement){
-        String smallName = statement.name.toLowerCase().replace(" ", "");
+        String smallName = statement.name().toLowerCase().replace(" ", "");
         cont.clear();
         Table table = new Table();
         table.margin(10);
@@ -43,7 +44,7 @@ public class LStatementInfoDialog extends BaseDialog{
         lStats.each((k, v) -> {
             table.table(inset -> {
                 inset.left();
-                inset.add("[lightgray]" + bundle.get("lstat." + v) + ":[] " + v.get(statement)).left().top();
+                inset.add("[lightgray]" + bundle.get("lstat." + k) + ":[] " + v.get(statement)).left().top();
             });
             table.row();
         });
