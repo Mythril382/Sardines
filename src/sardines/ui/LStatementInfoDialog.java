@@ -35,7 +35,7 @@ public class LStatementInfoDialog extends BaseDialog{
         table.margin(10);
         
         table.table(title1 -> {
-            title1.image(Icon.logic).size(iconXLarge).scaling(Scaling.fit);
+            title1.image(Icon.logic).color(statement.category().color).size(iconXLarge).scaling(Scaling.fit);
             title1.add("[accent]" + statement.name() + (settings.getBool("console") ? "\n[gray]" + smallName : "")).padLeft(10);
         });
         table.row();
