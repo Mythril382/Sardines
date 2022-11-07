@@ -48,7 +48,10 @@ public class Sardines extends Mod{
     public void setupDatabase(){
         Table db = (Table)Reflect.get(ui.database, "all");
         TextField search = (TextField)Reflect.get(ui.database, "search");
-        Seq<LStatement> statements = LogicIO.allStatements.copy().map(prov -> prov.get()).select(lst -> lst.category() != LCategory.unknown && (search.getText().isEmpty() || lst.name().toLowerCase().contains(search.getText().toLowerCase())));
+        
+        if(!search.getText().isEmpty()) return;
+        
+        Seq<LStatement> statements = LogicIO.allStatements.copy().map(prov -> prov.get()).select(lst -> lst.category() != LCategory.unknown);
         
         db.add("@content.lstatement.name").growX().left().color(Pal.spore);
         db.row();
