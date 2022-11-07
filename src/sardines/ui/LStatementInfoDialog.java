@@ -40,10 +40,10 @@ public class LStatementInfoDialog extends BaseDialog{
         });
         table.row();
         
-        if(bundle.has(smallName)){
+        if(bundle.has("lst." + smallName)){
             table.add("@category.purpose").color(Pal.accent).fillX().padTop(10);
             table.row();
-            table.add("[lightgray]" + bundle.get(smallName)).wrap().fillX().padLeft(10).width(500f).left();
+            table.add("[lightgray]" + bundle.get("lst." + smallName)).wrap().fillX().padLeft(10).width(500f).left();
             table.row();
         }
         
