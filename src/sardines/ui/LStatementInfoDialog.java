@@ -48,7 +48,7 @@ public class LStatementInfoDialog extends BaseDialog{
         lStats.each((k, v) -> {
             table.table(inset -> {
                 inset.left();
-                inset.add("[lightgray]" + bundle.get("lstat." + k) + ":[] " + v.get(statement)).fillX().left().top();
+                inset.add("[lightgray]" + bundle.get("lstat." + k) + ":[] " + v.get(statement)).fillX().padLeft(10).left().top();
             }).fillX();
             table.row();
         });
