@@ -53,9 +53,9 @@ public class Sardines extends Mod{
         
         Seq<LStatement> statements = LogicIO.allStatements.copy().map(prov -> prov.get()).select(lst -> lst.category() != LCategory.unknown);
         
-        db.add("@content.lstatement.name").growX().left().color(Pal.spore);
+        db.add("@content.lstatement.name").growX().left().color(Pal.spore.cpy().mul(1.25f));
         db.row();
-        db.image().growX().pad(5).padLeft(0).padRight(0).height(3).color(Pal.spore);
+        db.image().growX().pad(5).padLeft(0).padRight(0).height(3).color(Pal.spore.cpy().mul(1.25f));
         db.row();
         
         db.table(list -> {
