@@ -41,9 +41,14 @@ public class LStatementInfoDialog extends BaseDialog{
         table.row();
         
         if(bundle.has("lst." + smallName)){
-            table.add("[lightgray]" + bundle.get("lst." + smallName)).wrap().fillX().padLeft(10).padBottom(20).width(500f).left();
+            table.add("@category.purpose").color(Pal.accent).fillX().left();
+            table.row();
+            table.add("[lightgray]" + bundle.get("lst." + smallName)).wrap().fillX().padLeft(10).width(500f).left();
             table.row();
         }
+        
+        table.add("@category.general").color(Pal.accent).fillX().left();
+        table.row();
         
         lStats.each((k, v) -> {
             table.table(inset -> {
