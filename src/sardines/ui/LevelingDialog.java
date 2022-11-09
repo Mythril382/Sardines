@@ -40,7 +40,7 @@ public class LevelingDialog extends BaseDialog{
             t.setColor(Pal.darkishGray);
             t.image(Items.carbide.uiIcon).size(iconXLarge).scaling(Scaling.fit).pad(5);
             t.label(() -> Integer.toString(settings.getInt("mini-carbs", 0))).style(Styles.outlineLabel).pad(5);
-            t.button(Icon.add, () -> ui.showInfo("[lightgray]...")).size(iconXLarge).style(Styles.clearNonei).pad(5);
+            t.button(Icon.add, Styles.clearNonei, () -> ui.showInfo("[lightgray]...")).size(iconXLarge).pad(5);
         }).pad(20).padBottom(5).row();
         
         cont.table(t -> {
@@ -48,7 +48,7 @@ public class LevelingDialog extends BaseDialog{
             t.setColor(Pal.darkishGray);
             t.image(Blocks.carbideCrucible.uiIcon).size(iconXLarge).scaling(Scaling.fit).pad(5);
             t.label(() -> Integer.toString(settings.getInt("mini-carb-prods", 5))).style(Styles.outlineLabel).pad(5);
-            t.button(Icon.hammer, () -> { if(SardVars.ui.prod != null) SardVars.ui.prod.show(); }).size(iconXLarge).style(Styles.clearNonei).pad(5);
+            t.button(Icon.hammer, Styles.clearNonei, () -> { if(SardVars.ui.prod != null) SardVars.ui.prod.show(); }).size(iconXLarge).pad(5);
         }).pad(20).padTop(0).row();
         
         cont.pane(list -> {
