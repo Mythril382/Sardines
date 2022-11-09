@@ -1,7 +1,5 @@
 package sardines.ui;
 
-import arc.scene.ui.layout.*;
-import arc.util.*;
 import mindustry.content.*;
 import mindustry.gen.*;
 import mindustry.graphics.*;
@@ -24,16 +22,13 @@ public class ProductionDialog extends BaseDialog{
     void rebuild(){
         cont.clear();
         
-        Table counter = cont.table(t -> {
+        cont.table(t -> {
             t.setBackground(Tex.whiteui);
             t.setColor(Pal.darkishGray);
-            t.image(Blocks.carbideCrucible.uiIcon).size(iconXLarge).scaling(Scaling.fit).pad(5);
+            t.button(Blocks.carbideCrucible.uiIcon, Styles.clearNonei, () -> ui.showInfo("@mini-carb.prodhint")).size(iconXLarge).pad(5);
             t.label(() -> Integer.toString(settings.getInt("mini-carb-prods", 5))).style(Styles.outlineLabel).pad(5);
-        }).pad(20).get();
-        counter.clicked(() -> ui.showInfo("@mini-carb.prodhint"));
+        }).pad(20);
         cont.row();
-        
-        cont.add("@mini-carb.prodclick").pad(20).row();
         
         cont.button("@mini-carb.prodbuy", () -> {
             int mc = settings.getInt("mini-carbs", 5);
