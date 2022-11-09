@@ -26,9 +26,9 @@ public class LevelingDialog extends BaseDialog{
         shown(() -> {
             this.rebuild();
             
-            boolean hintDone = settings.getBool("leveling-hint", false);
+            /* boolean hintDone = settings.getBool("leveling-hint", false);
             if(!hintDone) ui.showInfo("@leveling.hint");
-            settings.put("leveling-hint", true);
+            settings.put("leveling-hint", true); */
         });
         onResize(this::rebuild);
     }
@@ -43,14 +43,14 @@ public class LevelingDialog extends BaseDialog{
             t.setColor(Pal.darkishGray);
             t.image(Items.carbide.uiIcon).size(iconXLarge).scaling(Scaling.fit).pad(5);
             t.label(() -> Integer.toString(settings.getInt("mini-carbs", 0))).style(Styles.outlineLabel).pad(5);
-        }).pad(20).row();
+        }).pad(20).padBottom(5).row();
         
         cont.table(t -> {
             t.setBackground(Tex.whiteui);
             t.setColor(Pal.darkishGray);
             t.image(Blocks.carbideCrucible.uiIcon).size(iconXLarge).scaling(Scaling.fit).pad(5);
             t.label(() -> Integer.toString(settings.getInt("mini-carb-prods", 5))).style(Styles.outlineLabel).pad(5);
-        }).pad(20).row();
+        }).pad(20).padTop(0).row();
         
         cont.pane(list -> {
             all.each(l -> {
