@@ -1,6 +1,6 @@
 package sardines.ui;
 
-import arc.scene.style.*;
+import arc.util.*;
 import mindustry.content.*;
 import mindustry.gen.*;
 import mindustry.graphics.*;
@@ -26,8 +26,9 @@ public class ProductionDialog extends BaseDialog{
         cont.table(t -> {
             t.setBackground(Tex.whiteui);
             t.setColor(Pal.darkishGray);
-            t.button(new TextureRegionDrawable(Blocks.carbideCrucible.uiIcon), Styles.clearNonei, () -> ui.showInfo("@mini-carb.prodhint")).size(iconXLarge).pad(5);
+            t.image(Blocks.carbideCrucible.uiIcon).size(iconXLarge).scaling(Scaling.fit).pad(5);
             t.label(() -> Integer.toString(settings.getInt("mini-carb-prods", 5))).style(Styles.outlineLabel).pad(5);
+            t.button(Icon.info, Styles.clearNonei, () -> ui.showInfo("@mini-carb.prodhint")).size(iconXLarge).pad(5);
         }).pad(20);
         cont.row();
         
