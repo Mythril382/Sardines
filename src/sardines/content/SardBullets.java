@@ -9,11 +9,14 @@ public class SardBullets{
     
     public static void load(){
         wallBowling = new BowlingBulletType(1f, 150f){{
-            width = height = 4f * 32f;
+            width = height = 6f;
             lifetime = 60f * 2.5f;
             spin = 3f;
             
-            frontColor = Color.valueOf("ffffff");
+            layer = 99;
+            frontColor = trailColor = Color.valueOf("ffffff");
+            trailLength = 20f;
+            trailWidth = 3f;
         }};
     }
 }
