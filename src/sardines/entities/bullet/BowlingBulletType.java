@@ -21,7 +21,7 @@ public class BowlingBulletType extends BasicBulletType{
     
     @Override
     public void hit(Bullet b){
-        super(b);
+        super.hit(b);
         
         float f = b.fdata;
         
