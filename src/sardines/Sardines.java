@@ -24,7 +24,7 @@ public class Sardines extends Mod{
     
     public Sardines(){
         Events.on(ClientLoadEvent.class, e -> {
-            SardBullets.wallBowling = Blocks.copperWall.fullIcon;
+            SardBullets.wallBowling.frontRegion = Blocks.copperWall.fullIcon;
             
             ui.menufrag.addButton("@leveling", Icon.effect, SardVars.ui.level::show);
             
