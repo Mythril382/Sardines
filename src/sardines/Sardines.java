@@ -12,6 +12,7 @@ import mindustry.gen.*;
 import mindustry.graphics.*;
 import mindustry.logic.*;
 import mindustry.mod.*;
+import sardines.content.*;
 import sardines.leveling.*;
 
 import static arc.Core.*;
@@ -22,6 +23,8 @@ public class Sardines extends Mod{
     
     public Sardines(){
         Events.on(ClientLoadEvent.class, e -> {
+            SardBullets.wallBowling = Blocks.copperWall.fullIcon;
+            
             ui.menufrag.addButton("@leveling", Icon.effect, SardVars.ui.level::show);
             
             Events.run(Trigger.update, () -> {
@@ -43,6 +46,7 @@ public class Sardines extends Mod{
     @Override
     public void loadContent(){
         LevelingSystem.load();
+        SardBullets.load();
     }
     
     public void setupDatabase(){
