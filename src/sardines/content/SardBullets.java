@@ -15,7 +15,7 @@ public class SardBullets{
             spin = 3f;
             layer = 99f;
             frontColor = trailColor = Color.valueOf("ffffff");
-            trailLength = 20f;
+            trailLength = 20;
             trailWidth = 3f;
         }};
     }
