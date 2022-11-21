@@ -33,7 +33,7 @@ public class BowlingBulletType extends BasicBulletType{
             b.fdata = 2f;
             b.rotation(b.rotation() - (rotChange * 2f));
         }else{
-            b.fdata = 1f
+            b.fdata = 1f;
             b.rotation(b.rotation() + (rotChange * 2f));
         }
     }
