@@ -13,7 +13,7 @@ public class SardBullets{
             lifetime = 60f * 2.5f;
             spin = 3f;
             
-            layer = 99;
+            layer = 99f;
             frontColor = trailColor = Color.valueOf("ffffff");
             trailLength = 20f;
             trailWidth = 3f;
