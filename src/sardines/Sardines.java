@@ -8,6 +8,7 @@ import arc.scene.ui.layout.*;
 import arc.struct.*;
 import arc.util.*;
 import mindustry.content.*;
+import mindustry.entities.bullet.*;
 import mindustry.game.EventType.*;
 import mindustry.gen.*;
 import mindustry.graphics.*;
@@ -24,7 +25,7 @@ public class Sardines extends Mod{
     
     public Sardines(){
         Events.on(ClientLoadEvent.class, e -> {
-            SardBullets.wallBowling.frontRegion = Blocks.copperWall.fullIcon;
+            ((BasicBulletType)SardBullets.wallBowling).frontRegion = Blocks.copperWall.fullIcon;
             
             ui.menufrag.addButton("@leveling", Icon.effect, SardVars.ui.level::show);
             
