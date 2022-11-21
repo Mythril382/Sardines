@@ -1,5 +1,6 @@
 package sardines.content;
 
+import arc.graphics.*;
 import mindustry.entities.bullet.*;
 import sardines.entities.bullet.*;
 
@@ -11,6 +12,8 @@ public class SardBullets{
             width = height = 4f * 32f;
             lifetime = 60f * 2.5f;
             spin = 3f;
+            
+            frontColor = Color.valueOf("ffffff");
         }};
     }
 }
