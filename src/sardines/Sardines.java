@@ -26,7 +26,7 @@ public class Sardines extends Mod{
         Events.on(ClientLoadEvent.class, e -> {
             ((BasicBulletType)SardBullets.wallBowling).frontRegion = Blocks.copperWall.fullIcon;
             
-            ui.menufrag.addButton("@production", Icon.effect, SardVars.ui.prod::show);
+            ui.menufrag.addButton("@mini-carb.prods", Icon.effect, SardVars.ui.prod::show);
             
             Events.run(Trigger.update, () -> {
                 counter += Time.delta;
