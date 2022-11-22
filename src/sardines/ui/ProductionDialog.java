@@ -26,6 +26,14 @@ public class ProductionDialog extends BaseDialog{
         cont.table(t -> {
             t.setBackground(Tex.whiteui);
             t.setColor(Pal.darkishGray);
+            t.image(Items.carbide.uiIcon).size(iconXLarge).scaling(Scaling.fit).pad(5);
+            t.label(() -> Integer.toString(settings.getInt("mini-carbs", 5))).style(Styles.outlineLabel).pad(5);
+        }).pad(20);
+        cont.row();
+        
+        cont.table(t -> {
+            t.setBackground(Tex.whiteui);
+            t.setColor(Pal.darkishGray);
             t.image(Blocks.carbideCrucible.uiIcon).size(iconXLarge).scaling(Scaling.fit).pad(5);
             t.label(() -> Integer.toString(settings.getInt("mini-carb-prods", 5))).style(Styles.outlineLabel).pad(5);
             t.button(Icon.info, Styles.clearNonei, () -> ui.showInfo("@mini-carb.prodhint")).size(iconXLarge).pad(5);
