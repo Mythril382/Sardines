@@ -5,17 +5,19 @@ import mindustry.entities.bullet.*;
 import sardines.entities.bullet.*;
 
 public class SardBullets{
-    public static BulletType wallBowling;
+    public static BulletType
+    copperWallBowling;
     
     public static void load(){
-        wallBowling = new BowlingBulletType(1f, 150f){{
+        copperWallBowling = new BowlingBulletType(1f, 150f){{
             width = height = 6f;
             shrinkX = shrinkY = 0f;
             lifetime = 60f * 2.5f;
             spin = 3f;
             layer = 99f;
-            frontColor = trailColor = Color.valueOf("ffffff");
-            trailLength = 20;
+            frontColor = Color.valueOf("ffffff");
+            trailColor = Color.valueOf("d99d73");
+            trailLength = 35;
             trailWidth = 3f;
         }};
     }
