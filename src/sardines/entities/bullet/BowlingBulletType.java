@@ -10,7 +10,7 @@ public class BowlingBulletType extends BasicBulletType{
     public BowlingBulletType(float speed, float damage){
         super(speed, damage);
         
-        pierce = true;
+        pierce = pierceBuilding = true;
     }
     
     public BowlingBulletType(float speed, float damage, float rotChange){
