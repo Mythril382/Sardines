@@ -10,11 +10,11 @@ public class SardBullets{
     copperWallBowling;
     
     public static void load(){
-        copperWallBowling = new BowlingBulletType(1f, 200f){{
+        copperWallBowling = new BowlingBulletType(3f, 200f){{
             width = height = 6f;
             pierceCap = 4;
             shrinkX = shrinkY = 0f;
-            lifetime = 60f * 2.5f;
+            lifetime = 60f * 3f;
             spin = 3f;
             layer = 99f;
             frontColor = Color.valueOf("ffffff");
