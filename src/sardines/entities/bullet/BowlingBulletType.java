@@ -37,13 +37,13 @@ public class BowlingBulletType extends BasicBulletType{
     
     @Override
     public void hitTile(Bullet b, Building build, float x, float y, float initialHealth, boolean direct){
-        super(b, build, x, y, initialHealth, direct);
+        super.hitTile(b, build, x, y, initialHealth, direct);
         if(direct) changeRot(b);
     }
     
     @Override
     public void hitEntity(Bullet b, Hitboxc entity, float health){
-        super(b, entity, health);
+        super.hitEntity(b, entity, health);
         changeRot(b);
     }
 }
