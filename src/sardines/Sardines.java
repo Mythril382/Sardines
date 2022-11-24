@@ -25,6 +25,7 @@ public class Sardines extends Mod{
     public Sardines(){
         Events.on(ClientLoadEvent.class, e -> {
             ((BasicBulletType)SardBullets.copperWallBowling).frontRegion = Blocks.copperWall.fullIcon;
+            ((BasicBulletType)SardBullets.titaniumWallBowling).frontRegion = Blocks.titaniumWall.fullIcon;
             
             ui.menufrag.addButton("...", Icon.hammer, SardVars.ui.prod::show);
             
