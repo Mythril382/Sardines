@@ -15,7 +15,7 @@ public class SardBullets{
     public static void load(){
         copperWallBowling = new BowlingBulletType(3f, 200f){{
             width = height = 6f;
-            pierceCap = 4;
+            // pierceCap = 4;
             shrinkX = shrinkY = 0f;
             lifetime = 60f * 3f;
             spin = 3f;
@@ -26,9 +26,9 @@ public class SardBullets{
             hitSound = Sounds.bang;
         }};
         
-        titaniumWallBowling = new BowlingBulletType(3f, 400f){{
+        titaniumWallBowling = new BowlingBulletType(3f, 600f){{
             width = height = 8f;
-            pierceCap = 6;
+            // pierceCap = 6;
             shrinkX = shrinkY = 0f;
             lifetime = 60f * 3f;
             spin = 5f;
