@@ -16,7 +16,6 @@ public class SardBullets{
             shrinkX = shrinkY = 0f;
             lifetime = 60f * 3f;
             spin = 3f;
-            layer = 99f;
             frontColor = Color.valueOf("ffffff");
             trailColor = Color.valueOf("d99d73");
             trailLength = 35;
