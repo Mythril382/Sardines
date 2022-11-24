@@ -20,10 +20,7 @@ public class BowlingBulletType extends BasicBulletType{
     }
     
     // there's 100% a better way to do this
-    @Override
-    public void hit(Bullet b, float x, float y){
-        super.hit(b, x, y);
-        
+    public void changeRot(Bullet b){
         float f = b.fdata;
         
         if(f != 1f && f != 2f){
@@ -36,5 +33,17 @@ public class BowlingBulletType extends BasicBulletType{
             b.fdata = 1f;
             b.rotation(b.rotation() + (rotChange * 2f));
         }
+    }
+    
+    @Override
+    public void hitTile(Bullet b, Building build, float x, float y, float initialHealth, boolean direct){
+        super(b, build, x, y, initialHealth, direct);
+        if(direct) changeRot(b);
+    }
+    
+    @Override
+    public void hitEntity(Bullet b, Hitboxc entity, float health){
+        super(b, entity, health);
+        changeRot(b);
     }
 }
