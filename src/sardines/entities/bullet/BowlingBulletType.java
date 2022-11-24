@@ -26,7 +26,7 @@ public class BowlingBulletType extends BasicBulletType{
         if(f != 1f && f != 2f){
             b.fdata = f = (float)((int)Mathf.random(1, 2));
             b.rotation(b.rotation() + (f == 1f ? rotChange : -rotChange));
-        }else if(Mathf.chance(0.5f)){
+        }else if(f == 1f){
             b.fdata = 2f;
             b.rotation(b.rotation() - (rotChange * 2f));
         }else{
