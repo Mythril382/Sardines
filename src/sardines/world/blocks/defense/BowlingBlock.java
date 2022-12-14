@@ -1,4 +1,4 @@
-package sardines.world.blocks.defense.*;
+package sardines.world.blocks.defense;
 
 import arc.math.*;
 import mindustry.content.*;
@@ -12,7 +12,7 @@ import static mindustry.Vars.*;
 public class BowlingBlock extends Block{
     public BulletType bullet;
     
-    public BulletBlock(String name){
+    public BowlingBlock(String name){
         super(name);
         
         solid = false;
