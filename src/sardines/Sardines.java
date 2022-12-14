@@ -24,10 +24,7 @@ public class Sardines extends Mod{
     
     public Sardines(){
         Events.on(ClientLoadEvent.class, e -> {
-            ((BasicBulletType)SardBullets.copperWallBowling).frontRegion = Blocks.copperWall.fullIcon;
-            ((BasicBulletType)SardBullets.titaniumWallBowling).frontRegion = Blocks.titaniumWall.fullIcon;
-            
-            ui.menufrag.addButton("...", Icon.hammer, SardVars.ui.prod::show);
+            /*ui.menufrag.addButton("...", Icon.hammer, SardVars.ui.prod::show);
             
             Events.run(Trigger.update, () -> {
                 counter += Time.delta;
@@ -36,7 +33,7 @@ public class Sardines extends Mod{
                     settings.put("mini-carbs", settings.getInt("mini-carbs") + settings.getInt("mini-carb-prods", 5) * 1);
                     counter = 0f;
                 }
-            });
+            });*/
             
             ui.database.shown(this::setupDatabase);
             Events.run(ResizeEvent.class, () -> {
