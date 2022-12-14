@@ -5,6 +5,6 @@ main: sardines.Sardines
 subtitle: v0.1.0
 description: "A Mindustry Java mod that adds random stuffs.\nNot recommended for multiplayer!"
 version: 0.1.0
-minGameVersion: 140.2
+minGameVersion: 140.4
 java: true
 repo: Mythril382/Sardines
