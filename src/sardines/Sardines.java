@@ -48,6 +48,7 @@ public class Sardines extends Mod{
     @Override
     public void loadContent(){
         SardBullets.load();
+        SardBlocks.load();
     }
     
     public void setupDatabase(){
