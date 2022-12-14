@@ -6,11 +6,7 @@ import mindustry.gen.*;
 import sardines.entities.bullet.*;
 
 public class SardBullets{
-    public static BulletType
-    
-    // wall bowling
-    copperWallBowling,
-    titaniumWallBowling;
+    public static BulletType copperWallBowling, titaniumWallBowling;
     
     public static void load(){
         copperWallBowling = new BowlingBulletType(3f, 200f){{
@@ -24,6 +20,7 @@ public class SardBullets{
             trailLength = 35;
             trailWidth = 3f;
             hitSound = Sounds.bang;
+            sprite = "copper-wall";
         }};
         
         titaniumWallBowling = new BowlingBulletType(3f, 600f){{
@@ -37,6 +34,7 @@ public class SardBullets{
             trailLength = 45;
             trailWidth = 4f;
             hitSound = Sounds.bang;
+            sprite = "titanium-wall";
         }};
     }
 }
