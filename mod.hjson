@@ -3,7 +3,7 @@ name: mythril-sardines
 author: Mythril
 main: sardines.Sardines
 subtitle: v1.0.1
-description: "A Mindustry Java mod that adds random stuffs.\nNot recommended for multiplayer!"
+description: "A Mindustry Java mod that adds random stuffs."
 version: 1.0.1
 minGameVersion: 141.1
 java: true
