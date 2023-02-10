@@ -6,6 +6,7 @@ import mindustry.gen.*;
 
 public class BowlingBulletType extends BasicBulletType{
     public float rotChange = 45f;
+    public boolean bounceBack = false;
     
     public BowlingBulletType(float speed, float damage){
         super(speed, damage);
@@ -21,17 +22,21 @@ public class BowlingBulletType extends BasicBulletType{
     
     // there's 100% a better way to do this
     public void changeRot(Bullet b){
-        float f = b.fdata;
-        
-        if(f != 1f && f != 2f){
-            b.fdata = f = (float)((int)Mathf.random(1, 2));
-            b.rotation(b.rotation() + (f == 1f ? rotChange : -rotChange));
-        }else if(f == 1f){
-            b.fdata = 2f;
-            b.rotation(b.rotation() - (rotChange * 2f));
+        if(bounceBack){
+            b.rotation(b.rotation() + (Mathf.chance(0.5f) ? rotChange : -rotChange));
         }else{
-            b.fdata = 1f;
-            b.rotation(b.rotation() + (rotChange * 2f));
+            float f = b.fdata;
+            
+            if(f != 1f && f != 2f){
+                b.fdata = f = (float)((int)Mathf.random(1, 2));
+                b.rotation(b.rotation() + (f == 1f ? rotChange : -rotChange));
+            }else if(f == 1f){
+                b.fdata = 2f;
+                b.rotation(b.rotation() - (rotChange * 2f));
+            }else{
+                b.fdata = 1f;
+                b.rotation(b.rotation() + (rotChange * 2f));
+            }
         }
     }
     
