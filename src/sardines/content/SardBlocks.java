@@ -21,5 +21,15 @@ public class SardBlocks{
             requirements(Category.turret, with(Items.titanium, 6));
             bullet = SardBullets.titaniumWallBowling;
         }};
+        
+        scrapWallBowling = new BowlingBlock("scrap-wall-bowling"){{
+            requirements(Category.turret, with(Items.scrap, 6));
+            bullet = SardBullets.scrapWallBowling;
+        }};
+        
+        leadWallBowling = new BowlingBlock("lead-wall-bowling"){{
+            requirements(Category.turret, with(Items.lead, 6));
+            bullet = SardBullets.leadWallBowling;
+        }};
     }
 }
