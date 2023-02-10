@@ -21,7 +21,7 @@ public class BowlingBlock extends Block{
     
     @Override
     public boolean canPlaceOn(Tile tile, Team team, int rotation){
-        return mapBowling() ? tile.floor() == Blocks.sandWater : super.canPlaceOn(tile, team, rotation);
+        return mapBowling() ? tile.floor() == Blocks.metalFloor5 : super.canPlaceOn(tile, team, rotation);
     }
     
     public static boolean mapBowling(){
