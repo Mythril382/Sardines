@@ -2,9 +2,9 @@ displayName: Sardines
 name: mythril-sardines
 author: Mythril
 main: sardines.Sardines
-subtitle: v1.0.1
+subtitle: v1.1.0
 description: "A Mindustry Java mod that adds random stuffs."
-version: 1.0.1
-minGameVersion: 141.1
+version: 1.1.0
+minGameVersion: 141.3
 java: true
 repo: Mythril382/Sardines
