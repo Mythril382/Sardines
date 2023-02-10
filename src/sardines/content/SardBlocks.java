@@ -9,7 +9,7 @@ import sardines.world.blocks.defense.*;
 import static mindustry.type.ItemStack.*;
 
 public class SardBlocks{
-    public static Block copperWallBowling, titaniumWallBowling;
+    public static Block copperWallBowling, titaniumWallBowling, scrapWallBowling, leadWallBowling;
     
     public static void load(){
         copperWallBowling = new BowlingBlock("copper-wall-bowling"){{
