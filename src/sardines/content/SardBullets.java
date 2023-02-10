@@ -60,7 +60,7 @@ public class SardBullets{
             trailLength = 35;
             trailWidth = 3f;
             hitSound = Sounds.bang;
-            sprite = "sardines-lead-wall-bowling";
+            sprite = "mythril-sardines-lead-wall-bowling";
             bounceBack = true;
         }};
     }
